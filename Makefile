@@ -1,14 +1,12 @@
-.PHONY: png html clean
-
-all: png sample.html
-
-png:
-	marp --images png sample.md
+.PHONY: html png clean
 
 html: sample.html
 
-sample.html:
-	marp sample.md
+png: sample.md
+	marp --images png $<
+
+sample.html: sample.md
+	marp $<
 
 clean:
-	-rm -f *.png *html
+	-rm -f sample.*.png *html
