@@ -1,0 +1,44 @@
+/* @theme my_theme */
+/* Import default */
+@import 'default';
+
+h1, h2 { color: black !important; }
+
+/* Change font for codes */
+code, code * { font-family: "Monaco", "Courier New", monospace !important; }
+
+/* Background Position */
+section {
+	justify-content: start;
+	background-image:
+		url(logo.svg),
+		url(background.png);
+	background-repeat: no-repeat;
+	background-position:
+		right 30px top 30px,
+		center;
+	background-size:
+		100px,
+		cover;
+}
+/* On top page, show a larger logo at center */
+section.top {
+	justify-content: center;
+	text-align: center;
+	background-image:
+		url(logo.svg),
+		url(background.png);
+	background-repeat: no-repeat;
+	background-position:
+		top 150px center,
+		center;
+	background-size:
+		400px,
+		cover;
+}
+section::after {
+	color: black;
+}
+section[data-marpit-advanced-background-split="right"] figure {
+	margin-right: 70px !important;
+}
