@@ -104,3 +104,19 @@ Markdown:
 ```
 ![bg opacity:0.7 contain](image.png)
 ```
+
+## Place Page Number at Center of Footer & Add Border
+<!-- _class: center_paging -->
+CSS:
+```
+section::after {
+	right: 30px; /* works as footer margin */
+	width: calc(100% - 60px);
+	text-align: center;
+	border-top: solid black 1px;
+	padding-top: 15px;
+}
+```
+
+Let `section::after` span all pages.
+Here, it's good idea to use [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc) feature of CSS.
