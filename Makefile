@@ -7,7 +7,7 @@ data: logo.txt background.txt
 logo.txt: logo.svg
 	openssl base64 -A -in $< -out $@
 
-background.txt: background.png
+bg.txt: bg.svg
 	openssl base64 -A -in $< -out $@
 
 png: sample.md
