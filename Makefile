@@ -1,7 +1,11 @@
 .PHONY: html png clean data
 
-html: sample.html
+MD_FILES = sample.md
+HTML_FILES = $(patsubst %.md,%.html,$(MD_FILES))
+PNG_FILES = $(patsubst %.md,%.png,$(MD_FILES))
 
+html: $(HTML_FILES)
+png: $(PNG_FILES)
 data: logo.txt background.txt
 
 logo.txt: logo.svg
@@ -10,11 +14,11 @@ logo.txt: logo.svg
 bg.txt: bg.svg
 	openssl base64 -A -in $< -out $@
 
-png: sample.md
+$(PNG_FILES): %.png: %.md
 	marp --images png $<
 
-sample.html: sample.md my_theme.css
+$(HTML_FILES): %.html: %.md my_theme.css
 	marp $< 
 
 clean:
-	-rm -f sample.*.png *html logo.txt background.txt
+	-$(RM) sample.*.png *html logo.txt background.txt

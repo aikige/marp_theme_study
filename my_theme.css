@@ -52,6 +52,22 @@ section.center_paging::after {
 	border-top: solid black 1px;
 	padding-top: 15px;
 }
-section[data-marpit-advanced-background-split="right"] figure {
+section.right_bg_margin[data-marpit-advanced-background-split="right"] figure {
 	margin-right: 70px !important;
+}
+section.center_paging[data-marpit-advanced-background] figure {
+	margin: 30px !important;
+	margin-bottom: 78px !important;
+}
+section.center_paging[data-marpit-advanced-background-split] figure {
+	margin-top: 30px !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	margin-bottom: 78px !important;
+}
+section.center_paging[data-marpit-advanced-background-split="right"] figure:last-child {
+	margin-right: 30px !important;
+}
+section.center_paging[data-marpit-advanced-background-split="left"] figure:first-child {
+	margin-left: 30px !important;
 }
