@@ -52,22 +52,33 @@ section.center_paging::after {
 	border-top: solid black 1px;
 	padding-top: 15px;
 }
+section.center_paging footer {
+	text-align: right !important;
+	width: calc(100% - 60px);
+	color: red;
+}
 section.right_bg_margin[data-marpit-advanced-background-split="right"] figure {
 	margin-right: 70px !important;
 }
-section.center_paging[data-marpit-advanced-background] figure {
-	margin: 30px !important;
-	margin-bottom: 78px !important;
+section.center_paging[data-marpit-advanced-background]:not([data-marpit-advanced-background-split]) >
+div[data-marpit-advanced-background-container] {
+	margin: 30px 30px 78px !important;
+	width: calc(100% - 60px);
+	height: calc(100% - 108px);
 }
-section.center_paging[data-marpit-advanced-background-split] figure {
+section.center_paging[data-marpit-advanced-background-split="right"] >
+div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	margin-bottom: 78px !important;
-}
-section.center_paging[data-marpit-advanced-background-split="right"] figure:last-child {
 	margin-right: 30px !important;
+	margin-bottom: 78px !important;
+	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	height: calc(100% - 108px) !important;
 }
-section.center_paging[data-marpit-advanced-background-split="left"] figure:first-child {
+section.center_paging[data-marpit-advanced-background-split="left"] >
+div[data-marpit-advanced-background-container] {
+	margin-top: 30px !important;
 	margin-left: 30px !important;
+	margin-bottom: 78px !important;
+	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	height: calc(100% - 108px) !important;
 }

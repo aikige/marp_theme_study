@@ -122,6 +122,24 @@ section::after {
 Let `section::after` span all pages.
 Here, it's good idea to use [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc) feature of CSS.
 
+## Use Footer to Show Additional Info
+<!-- _class: center_paging -->
+<!-- _footer: Additional Information -->
+
+Markdown:
+```
+<!-- _footer: Additional Information -->
+```
+CSS
+```
+section footer {
+	text-align: right !important;
+	width: calc(100% - 60px);
+}
+```
+By default, width of `footer` is automatically set by contents (e.g. `widh:fit-content`),
+and placed in left-bottom corner.
+
 ## Adding Margin for Background to avoid Footers
 <!-- _class: center_paging -->
 ![bg opacity:0.5](image.png)
@@ -132,13 +150,15 @@ Markdown:
 ```
 CSS:
 ```
-section[data-marpit-advanced-background] figure {
-	margin: 30px !important;
-	margin-bottom: 78px !important;
+section[data-marpit-advanced-background]:not([data-marpit-advanced-background-split]) >
+div[data-marpit-advanced-background-container] {
+	margin: 30px 30px 78px !important;
+	width: calc(100% - 60px);
+	height: calc(100% - 108px);
 }
 ```
 
-## Adding Margin for Split Background to avoid Footers
+## Adding Margin for Split Background to avoid Footers (right side)
 <!-- _class: center_paging -->
 ![bg right](image.png)
 ![bg opacity:0.5](image.png)
@@ -150,30 +170,40 @@ Markdown:
 ```
 CSS:
 ```
-section[data-marpit-advanced-background-split] figure {
+section[data-marpit-advanced-background-split="right"] >
+div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	margin-bottom: 78px !important;
-}
-section[data-marpit-advanced-background-split="right"] figure:last-child {
 	margin-right: 30px !important;
+	margin-bottom: 78px !important;
+	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	height: calc(100% - 108px) !important;
 }
 ```
+## Adding Margin for Split Background to avoid Footers (right side, vertical)
+<!-- _class: center_paging -->
+![bg right vertical](image.png)
+![bg opacity:0.5](image.png)
 
-## Adding Margin for Split Background to avoid Footers
+Markdown:
+```
+![bg right vertical](image1.png)
+![bg](image2.png)
+```
+
+CSS is same as previous page.
+
+## Adding Margin for Split Background to avoid Footers (left side)
 <!-- _class: center_paging -->
 ![bg left](image.png)
 ![bg opacity:0.5](image.png)
 
 ```
-section[data-marpit-advanced-background-split] figure {
+section[data-marpit-advanced-background-split="left"] >
+div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	margin-bottom: 78px !important;
-}
-section[data-marpit-advanced-background-split="left"] figure:first-child {
 	margin-left: 30px !important;
+	margin-bottom: 78px !important;
+	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	height: calc(100% - 108px) !important;
 }
 ```
