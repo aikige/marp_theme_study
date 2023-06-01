@@ -175,18 +175,18 @@ div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
 	margin-right: 30px !important;
 	margin-bottom: 78px !important;
-	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	width: calc(var(--marpit-advanced-background-split) - 30px) !important;
 	height: calc(100% - 108px) !important;
 }
 ```
 ## Adding Margin for Split Background to avoid Footers (right side, vertical)
 <!-- _class: center_paging -->
-![bg right vertical](image.png)
+![bg right:40% vertical](image.png)
 ![bg opacity:0.5](image.png)
 
 Markdown:
 ```
-![bg right vertical](image1.png)
+![bg right:40% vertical](image1.png)
 ![bg](image2.png)
 ```
 
@@ -203,7 +203,7 @@ div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
 	margin-left: 30px !important;
 	margin-bottom: 78px !important;
-	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	width: calc(var(--marpit-advanced-background-split) - 30px) !important;
 	height: calc(100% - 108px) !important;
 }
 ```

@@ -71,7 +71,7 @@ div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
 	margin-right: 30px !important;
 	margin-bottom: 78px !important;
-	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	width: calc(var(--marpit-advanced-background-split) - 30px) !important;
 	height: calc(100% - 108px) !important;
 }
 section.center_paging[data-marpit-advanced-background-split="left"] >
@@ -79,6 +79,6 @@ div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
 	margin-left: 30px !important;
 	margin-bottom: 78px !important;
-	width: calc(100% - var(--marpit-advanced-background-split) - 30px) !important;
+	width: calc(var(--marpit-advanced-background-split) - 30px) !important;
 	height: calc(100% - 108px) !important;
 }
