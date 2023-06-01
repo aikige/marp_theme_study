@@ -192,6 +192,8 @@ Markdown:
 
 CSS is same as previous page.
 
+This is better solution than the one shown on page 6, since this trick can support multiple background images.
+
 ## Adding Margin for Split Background to avoid Footers (left side)
 <!-- _class: center_paging -->
 ![bg left](image.png)
