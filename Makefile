@@ -11,7 +11,7 @@ data: logo.txt background.txt
 logo.txt: logo.svg
 	openssl base64 -A -in $< -out $@
 
-bg.txt: bg.svg
+bg.txt 1px.txt: %.txt: %.svg
 	openssl base64 -A -in $< -out $@
 
 $(PNG_FILES): %.png: %.md
