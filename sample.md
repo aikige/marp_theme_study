@@ -152,7 +152,8 @@ CSS:
 ```
 section[data-marpit-advanced-background]:not([data-marpit-advanced-background-split]) >
 div[data-marpit-advanced-background-container] {
-	margin: 30px 30px 78px !important;
+	margin-top: 30px !important;
+	margin-left: 30px !important;
 	width: calc(100% - 60px);
 	height: calc(100% - 108px);
 }
@@ -173,8 +174,6 @@ CSS:
 section[data-marpit-advanced-background-split="right"] >
 div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
-	margin-right: 30px !important;
-	margin-bottom: 78px !important;
 	width: calc(var(--marpit-advanced-background-split) - 30px) !important;
 	height: calc(100% - 108px) !important;
 }
@@ -204,7 +203,6 @@ section[data-marpit-advanced-background-split="left"] >
 div[data-marpit-advanced-background-container] {
 	margin-top: 30px !important;
 	margin-left: 30px !important;
-	margin-bottom: 78px !important;
 	width: calc(var(--marpit-advanced-background-split) - 30px) !important;
 	height: calc(100% - 108px) !important;
 }
