@@ -20,6 +20,7 @@ code, code * { font-family: "Monaco", "Courier New", monospace !important; }
 /* Background Position */
 section {
 	justify-content: start;
+	/* use "background" to specify all at once */
 	background:
 		left var(--margin) bottom var(--footer-margin)/100px var(--logo-img),
 		bottom 72px right 30px/1220px 1px var(--1px-img), /* pseudo-border */
@@ -30,9 +31,10 @@ section {
 section.top {
 	justify-content: center;
 	text-align: center;
-	background:
-		top 150px center/400px var(--logo-img),
-		center/cover url(bg.svg);
+	/* specify each element one by one */
+	background-image: var(--logo-img), url(bg.svg);
+	background-position: top 150px center, center;
+	background-size: 400px, cover;
 	background-repeat: no-repeat;
 }
 section::after {
