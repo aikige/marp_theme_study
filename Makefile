@@ -11,8 +11,11 @@ data: logo.txt background.txt
 logo.txt: logo.svg
 	openssl base64 -A -in $< -out $@
 
-bg.txt 1px.txt: %.txt: %.svg
+bg.txt: %.txt: %.svg
 	openssl base64 -A -in $< -out $@
+
+1px.txt: %.txt: %.svg txt2uri.rb
+	./txt2uri.rb < $< > $@
 
 $(PNG_FILES): %.png: %.md
 	marp --images png $<
