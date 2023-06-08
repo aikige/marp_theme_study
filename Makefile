@@ -6,16 +6,13 @@ PNG_FILES = $(patsubst %.md,%.png,$(MD_FILES))
 
 html: $(HTML_FILES)
 png: $(PNG_FILES)
-data: logo.txt background.txt
+data: logo.txt background.txt 1px.txt
 
-logo.txt: logo.svg
+bg.txt logo.txt: %.txt: %.svg
 	openssl base64 -A -in $< -out $@
 
-bg.txt: %.txt: %.svg
-	openssl base64 -A -in $< -out $@
-
-1px.txt: %.txt: %.svg txt2uri.rb
-	./txt2uri.rb < $< > $@
+1px.txt: %.txt: %.svg sgml2uri.rb
+	./sgml2uri.rb < $< > $@
 
 $(PNG_FILES): %.png: %.md
 	marp --images png $<
